@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+html {
+  font-size: 62.5%;
+}
+.checkbox {
+  display: none;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
+  clip-path: circle(2.5rem at calc(100% - 4.5rem) 4.5rem);
+  transition: all 0.3s ease-in-out;
+}
+.checkbox:checked ~ .container {
+  clip-path: circle(75%);
+}
+.menu-btn {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  z-index: 1;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 5rem;
+  width: 5rem;
+  text-align: center;
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.checkbox:checked ~ .menu-btn {
+  color: #7464c8;
+  background: #fff;
+}
+.checkbox:checked ~ .menu-btn i::before {
+  content: "\f00d";
+}
+.container ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container ul li {
+  margin: 1.5rem 0;
+}
+.container ul li a {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 2rem 5rem;
+  position: relative;
+  line-height: 4rem;
+  transition: all 0.3s ease;
+}
+.container ul li a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 4rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5rem;
+  transform: scaleY(0);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.container ul li a:hover::before {
+  transform: scaleY(1);
+}
+.container ul li a:hover {
+  color: #051937;
+}
